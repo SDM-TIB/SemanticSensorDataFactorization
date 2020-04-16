@@ -25,5 +25,5 @@ $path_to_factorized_RDF_data - Path to the folder to save the factorized RDF dat
 Example json file and original RDF data are provided in the *database* folder. Use the command below to run the example.
 
 ```
-$cd RDFFactorization
+$cd SemanticSensorDataFactorization
 $java -jar target/FactorizationSSN-0.0.1-SNAPSHOT-jar-with-dependencies.jar ./dataset/original/ ./dataset/factorized/```
