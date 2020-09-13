@@ -26,4 +26,4 @@ Example json file and original RDF data are provided in the *database* folder. U
 
 ```
 $cd SemanticSensorDataFactorization
-$java -jar target/FactorizationSSN-0.0.1-SNAPSHOT-jar-with-dependencies.jar ./dataset/original/ ./dataset/factorized/```
+$java -jar target/FactorizationSSN-0.0.1-SNAPSHOT-jar-with-dependencies.jar ./dataset/original/ ./dataset/factorized/
