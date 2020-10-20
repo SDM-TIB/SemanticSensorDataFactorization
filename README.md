@@ -53,7 +53,7 @@ $path_to_observation_mappings - Path to the observation mappings file.
 
 $path_to_measurement_mappings - Path to the measurement mappings file.
 
-### Running Factorization with example when previously factorized RDF data already exists
+#### Running Factorization with example when previously factorized RDF data already exists
 
 Example original RDF data and mappings are provided in the *dataset* folder. Use the command below to run the example.
 
