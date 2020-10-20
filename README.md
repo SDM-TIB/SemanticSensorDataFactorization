@@ -1,4 +1,4 @@
-# SemanticSensorDataFactorization
+# SemanticSensorDataIncrementalFactorization
 
 The project incrementally generates the factorized representations of an RDF graph described using the Semantic Sensor Network Ontology. If there already exists a factorized dataset, the project uses the Observation and Measurement mappings of the factorized dataset and generates the factorized representations of the input original RDF data without factorizing the previously factorized dataset.
 
