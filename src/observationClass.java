@@ -2,11 +2,17 @@ import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.jena.rdf.model.Resource;
 
+import com.google.gson.annotations.Expose;
+
 public class observationClass {
 
+	@Expose
 	private final Resource sensor;
+	@Expose
 	private final Resource property;
+	@Expose
 	private final Resource phenomenon;
+	@Expose
 	private final Resource mURI;
 
 	observationClass(final Resource sensor, final Resource property,

@@ -2,9 +2,13 @@ import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.jena.rdf.model.Resource;
 
-public class measurementClass {
+import com.google.gson.annotations.Expose;
 
+public class measurementClass implements java.io.Serializable{
+
+	@Expose
 	private final Float value;
+	@Expose
 	private final Resource uom;
 
 	measurementClass(final Float value, final Resource uom) {

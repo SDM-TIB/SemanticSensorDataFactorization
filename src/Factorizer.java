@@ -42,26 +42,54 @@ public class Factorizer {
 
 	public static void main(final String[] args) throws ParseException,
 			IOException {
-	final String path_to_original_data = args[0]; // Path to RDF data to be factorized.
-	final String path_to_reduced_data = args[1]; // Path to RDF data previously factorized.
-	final String path_to_observation_hashmap = args[2]; // Path to the file, along with file name, containing observation mappings.
-	final String path_to_measurement_hashmap = args[3]; // Path to the file, along with file name, containing measurement mappings.
+		String path_to_original_data = ""; // Path to RDF data to be factorized.
+		String path_to_reduced_data = ""; // Path to RDF data previously factorized.
+		String path_to_observation_hashmap = ""; // Path to the file, along with file name, containing observation mappings.
+		String path_to_measurement_hashmap = ""; // Path to the file, along with file name, containing measurement mappings.
+				
+		if (args.length==4) {
+			// If there exists previously factorized RDF data, then provide path to the Observation and Measurement hashmaps 
+			// along with the path to original and factorized RDF data.
+			System.out.println("four arg");
+			path_to_original_data = args[0]; // Path to RDF data to be factorized.
+			path_to_reduced_data = args[1]; // Path to RDF data previously factorized.
+			path_to_observation_hashmap = args[2]; // Path to the file, along with file name, containing observation mappings.
+			path_to_measurement_hashmap = args[3]; // Path to the file, along with file name, containing measurement mappings.
+					 
+					
+			File obsDir = new File(path_to_observation_hashmap);  
+			if(obsDir.exists()) { 
+				// If obsDir contains the file with the observation mappings, then read those observation mappings. Otherwise do nothing.
+				System.out.println("arg 2 : "+path_to_observation_hashmap);
+				ReadHashmap("Observation",path_to_observation_hashmap); 
+				} 
 			
-			
-	File obsDir = new File(path_to_observation_hashmap);  
-	if(obsDir.exists()) { 
-		// If obsDir contains the file with the observation mappings, then read those observation mappings. Otherwise do nothing.
-		System.out.println("arg 2 : "+path_to_observation_hashmap);
-		ReadHashmap("Observation",path_to_observation_hashmap); 
-		} 
-	
-	File measDir = new File(path_to_measurement_hashmap); 
-	if(measDir.exists()) {
-		// If measDir contains the file with the measurement mappings, then read those measurement mappings. Otherwise do nothing.
-		System.out.println("arg 3 : "+ path_to_measurement_hashmap);
-		ReadHashmap("Measurement",path_to_measurement_hashmap); 
-	} 
-	
+			File measDir = new File(path_to_measurement_hashmap); 
+			if(measDir.exists()) {
+				// If measDir contains the file with the measurement mappings, then read those measurement mappings. Otherwise do nothing.
+				System.out.println("arg 3 : "+ path_to_measurement_hashmap);
+				ReadHashmap("Measurement",path_to_measurement_hashmap); 
+			}
+		}
+		else if(args.length==3)
+		{
+			// If there does not exist a factorized RDF data, then provide the path to the folder to save Observation and Measurement hashmaps 
+			// along with the path to original and factorized RDF data.
+			System.out.println("Three arg");
+			path_to_original_data = args[0]; // Path to RDF data to be factorized.
+			path_to_reduced_data = args[1]; // Path to RDF data previously factorized.	
+			path_to_observation_hashmap = args[2]+"/obshashmap.json"; // Path to the file, along with file name, containing observation mappings.
+			path_to_measurement_hashmap = args[2] + "/meashashmap.json"; // Path to the file, along with file name, containing measurement mappings.
+				
+		}
+		else
+		{
+			// Provide required parameters.
+			System.out.println("");
+			System.out.println("Provide required parameters. Program Terminated!!!!");
+			System.out.println("");
+			System.exit(0);
+		}
 	final long startTime = System.currentTimeMillis();  
 	System.out.println("Data Factorization Started.....");
 	singleFileFactorization( path_to_original_data, path_to_reduced_data); 

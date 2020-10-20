@@ -57,6 +57,7 @@ public class FloatFactorizer {
 		 * The old version of factorization code was creating three molecules; observation, measurement and time molecule. But in new
 		 * version we are no more creating time molecule. Therefore, we do not need to sort observations on time value. This function is
 		 * modified to remove the retrieval based on time order.
+		 * Further, the factorization is done incrementally, i.e., without factorizing from scratch the previously factorized data.
 		 ***/
 		// final long startTime = System.currentTimeMillis();
 		final String queryString = "prefix om-owl: <http://knoesis.wright.edu/ssw/ont/sensor-observation.owl#> "
