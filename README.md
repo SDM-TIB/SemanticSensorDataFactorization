@@ -35,7 +35,7 @@ Example original RDF data are provided in the *dataset* folder. Use the command 
 $cd SemanticSensorDataFactorization
 $mkdir ./dataset/hashmaps
 $java -jar target/FactorizationSSN-0.0.1-SNAPSHOT-jar-with-dependencies.jar ./dataset/original/ ./dataset/factorized/ ./dataset/hashmaps
-
+```
  
 ### Running Factorization with previously factorized RDF data
 
@@ -43,6 +43,7 @@ In case, there exists an already factorized RDF data, therefore, the path to the
 ```
 $java -jar target/FactorizationSSN-0.0.1-SNAPSHOT-jar-with-dependencies.jar $path_to_original_RDF_data $path_to_factorized_RDF_data $path_to_observation_mappings $path_to_measurement_mappings
 ```
+
 #### Parameters
 $path_to_original_RDF_data - Path to the original RDF graph to be factorized; an RDF graph described using the Semantic Sensor Network Ontology.
 
@@ -59,3 +60,4 @@ Example original RDF data and mappings are provided in the *dataset* folder. Use
 ```
 $cd SemanticSensorDataFactorization
 $java -jar target/FactorizationSSN-0.0.1-SNAPSHOT-jar-with-dependencies.jar ./dataset/original/ ./dataset/factorized/ ./dataset/hashmaps/obshashmap.json ./dataset/hashmaps/meashashmap.json
+```
